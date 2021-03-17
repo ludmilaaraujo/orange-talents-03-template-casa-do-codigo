@@ -24,7 +24,10 @@ public class Autor {
         this.email = email;
         this.descricao = descricao;
     }
+    @Deprecated
+    public Autor(){
 
+    }
     public Autor(Long id, @NotNull String nome,
                  @NotEmpty @Email String email,
                  @NotEmpty @Size(max = 400) String descricao,
@@ -35,8 +38,11 @@ public class Autor {
         this.descricao = descricao;
         this.instante = instante;
     }
+
     @Override
     public  String toString(){
-        return "Autor [nome=" + nome + ", email=" + email + ", descricao= " + descricao +"]";
+        return "Autor [nome=" + nome
+                + ", email=" + email + ", " +
+                "descricao= " + descricao +"]";
+        }
     }
-}

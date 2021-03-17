@@ -1,12 +1,18 @@
 package br.com.editora.casaDoCodigo.entidades;
 
-import net.bytebuddy.implementation.bind.annotation.Super;
-
-import javax.validation.constraints.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 public class NovoAutor {
     @NotNull @NotEmpty
     private String nome;
+
+    public String getEmail() {
+        return email;
+    }
+
     @NotNull @NotEmpty @Email
     private String email;
     @NotNull@NotEmpty@Size(max=400)
@@ -21,7 +27,7 @@ public class NovoAutor {
     }
 
 
-    public Autor toModel(){
+    public Autor autorDTO(){
         return new Autor(this.nome,this.email,this.descricao);
 
     }
