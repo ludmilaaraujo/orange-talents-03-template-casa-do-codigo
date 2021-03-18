@@ -38,5 +38,13 @@ public class NovoAutorValidator implements Validator {
                     + requisicao.getEmail());
 
         }
+
+        Optional<Autor> temNome = autorRepository.findByNome(requisicao.getNome());
+
+        if (temNome.isPresent()) {
+            errors.rejectValue("nome", null, "Ja existe esse cliente cadastrado "
+                    + requisicao.getNome());
+
+        }
     }
 }

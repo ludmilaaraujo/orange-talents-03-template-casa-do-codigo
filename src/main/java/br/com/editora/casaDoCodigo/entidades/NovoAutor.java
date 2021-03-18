@@ -6,12 +6,16 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 public class NovoAutor {
+
+
     @NotNull @NotEmpty
     private String nome;
 
     public String getEmail() {
         return email;
     }
+    public String getNome() {
+        return nome;    }
 
     @NotNull @NotEmpty @Email
     private String email;
@@ -23,8 +27,7 @@ public class NovoAutor {
                      @NotNull @NotEmpty @Size(max = 400) String descricao) {
         this.nome = nome;
         this.email = email;
-        this.descricao = descricao;
-    }
+        this.descricao = descricao;    }
 
 
     public Autor autorDTO(){
