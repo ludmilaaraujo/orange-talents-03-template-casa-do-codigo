@@ -1,7 +1,7 @@
 package br.com.editora.casaDoCodigo.controller;
 
 import br.com.editora.casaDoCodigo.entidades.Autor;
-import br.com.editora.casaDoCodigo.entidades.NovoAutor;
+import br.com.editora.casaDoCodigo.request.NovoAutor;
 import br.com.editora.casaDoCodigo.repository.AutorRepository;
 import br.com.editora.casaDoCodigo.validacoes.NovoAutorValidator;
 import org.springframework.beans.factory.annotation.Autowired;

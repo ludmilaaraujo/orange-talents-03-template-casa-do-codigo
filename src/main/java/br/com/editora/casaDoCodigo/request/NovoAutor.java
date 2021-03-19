@@ -1,4 +1,6 @@
-package br.com.editora.casaDoCodigo.entidades;
+package br.com.editora.casaDoCodigo.request;
+
+import br.com.editora.casaDoCodigo.entidades.Autor;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
