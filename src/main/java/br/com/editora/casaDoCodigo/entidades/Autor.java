@@ -28,16 +28,6 @@ public class Autor {
     public Autor(){
 
     }
-    public Autor(Long id, @NotNull String nome,
-                 @NotEmpty @Email String email,
-                 @NotEmpty @Size(max = 400) String descricao,
-                 @NotNull LocalDateTime instante) {
-        this.id = id;
-        this.nome = nome;
-        this.email = email;
-        this.descricao = descricao;
-        this.instante = instante;
-    }
 
     @Override
     public  String toString(){

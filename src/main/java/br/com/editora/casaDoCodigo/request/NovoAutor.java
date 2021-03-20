@@ -29,10 +29,10 @@ public class NovoAutor {
                      @NotNull @NotEmpty @Size(max = 400) String descricao) {
         this.nome = nome;
         this.email = email;
-        this.descricao = descricao;    }
+        this.descricao = descricao;
+    }
 
-
-    public Autor autorDTO(){
+    public Autor converteToEntidade(){
         return new Autor(this.nome,this.email,this.descricao);
 
     }

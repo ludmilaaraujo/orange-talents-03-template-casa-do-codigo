@@ -1,8 +1,8 @@
 package br.com.editora.casaDoCodigo.controller;
 
 import br.com.editora.casaDoCodigo.entidades.Autor;
-import br.com.editora.casaDoCodigo.request.NovoAutor;
 import br.com.editora.casaDoCodigo.repository.AutorRepository;
+import br.com.editora.casaDoCodigo.request.NovoAutor;
 import br.com.editora.casaDoCodigo.validacoes.NovoAutorValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.WebDataBinder;
@@ -30,7 +30,7 @@ public class AutorController {
     @PostMapping
     @Transactional
     public String criar(@RequestBody @Valid NovoAutor novoAutor){
-        Autor autor = novoAutor.autorDTO();
+        Autor autor = novoAutor.converteToEntidade();
         autorRepository.save(autor);
         return autor.toString();
 
