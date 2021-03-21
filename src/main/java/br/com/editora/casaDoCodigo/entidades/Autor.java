@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.*;
 import java.time.LocalDateTime;
 
 @Entity
@@ -35,4 +34,16 @@ public class Autor {
                 + ", email=" + email + ", " +
                 "descricao= " + descricao +"]";
         }
+
+    public String getNome() {
+        return nome;
     }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+}

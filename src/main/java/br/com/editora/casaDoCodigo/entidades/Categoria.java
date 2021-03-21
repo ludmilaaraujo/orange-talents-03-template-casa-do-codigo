@@ -18,12 +18,17 @@ public class Categoria {
     public Categoria(@NotBlank String nome) {
        this.nome = nome;
     }
+
     @Deprecated
     public Categoria(){
     }
 
     @Override
-    public  String toString(){
+    public  String toString() {
         return "Categoria [nome=" + nome + "]";
+    }
+
+    public String getNome() {
+        return nome;
     }
 }

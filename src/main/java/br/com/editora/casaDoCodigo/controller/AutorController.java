@@ -33,7 +33,6 @@ public class AutorController {
         Autor autor = novoAutor.converteToEntidade();
         autorRepository.save(autor);
         return autor.toString();
-
     }
 
 

@@ -22,6 +22,10 @@ public class Livro {
     @ManyToOne(cascade = CascadeType.DETACH)
     private Autor autor;
 
+    public Livro(){
+
+    }
+
     public Livro(String titulo, String resumo, String sumario,
                  Double preco, Integer numeroPaginas, String isbn, Date dataPublicacao,
                  Categoria categoria,
@@ -40,6 +44,14 @@ public class Livro {
     @Override
     public String toString() {
         return this.titulo + " " + this.resumo;
+    }
+
+    public String getTitulo() {
+        return this.titulo;
+    }
+
+    public Long getId() {
+        return this.id;
     }
 }
 

@@ -9,16 +9,8 @@ import javax.validation.constraints.Size;
 
 public class NovoAutor {
 
-
     @NotNull @NotEmpty
     private String nome;
-
-    public String getEmail() {
-        return email;
-    }
-    public String getNome() {
-        return nome;    }
-
     @NotNull @NotEmpty @Email
     private String email;
     @NotNull@NotEmpty@Size(max=400)
@@ -31,6 +23,14 @@ public class NovoAutor {
         this.email = email;
         this.descricao = descricao;
     }
+
+
+    public String getEmail() {
+        return email;
+    }
+    public String getNome() {
+        return nome;    }
+
 
     public Autor converteToEntidade(){
         return new Autor(this.nome,this.email,this.descricao);

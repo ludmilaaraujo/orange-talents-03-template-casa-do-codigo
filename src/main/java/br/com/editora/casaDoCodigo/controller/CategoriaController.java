@@ -4,7 +4,9 @@ import br.com.editora.casaDoCodigo.entidades.Categoria;
 import br.com.editora.casaDoCodigo.repository.CategoriaRepository;
 import br.com.editora.casaDoCodigo.request.NovaCategoria;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.transaction.Transactional;
 import javax.validation.Valid;
@@ -36,4 +38,5 @@ public class CategoriaController {
         categoriaRepository.save(novacategoria);
         return novacategoria.toString();
     }
+
 }
