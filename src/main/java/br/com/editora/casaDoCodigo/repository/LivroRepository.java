@@ -1,6 +1,5 @@
 package br.com.editora.casaDoCodigo.repository;
 
-import br.com.editora.casaDoCodigo.entidades.Categoria;
 import br.com.editora.casaDoCodigo.entidades.Livro;
 import org.springframework.data.jpa.repository.JpaRepository;
 

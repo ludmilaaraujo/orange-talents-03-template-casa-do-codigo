@@ -53,6 +53,34 @@ public class Livro {
     public Long getId() {
         return this.id;
     }
+
+    public Autor getAutor() {
+        return this.autor;
+    }
+
+    public String getResumo() {
+        return this.resumo;
+    }
+
+    public String getSumario() {
+        return this.sumario;
+    }
+
+    public Double getPreco() {
+        return this.preco;
+    }
+
+    public Integer getNumeroPaginas() {
+        return this.numeroPaginas;
+    }
+
+    public String getIsbn() {
+        return this.isbn;
+    }
+
+    public Date getDataPublicacao() {
+        return this.dataPublicacao;
+    }
 }
 
 
