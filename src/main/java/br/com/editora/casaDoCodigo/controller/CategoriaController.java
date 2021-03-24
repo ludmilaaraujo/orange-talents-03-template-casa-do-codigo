@@ -2,7 +2,7 @@ package br.com.editora.casaDoCodigo.controller;
 
 import br.com.editora.casaDoCodigo.entidades.Categoria;
 import br.com.editora.casaDoCodigo.repository.CategoriaRepository;
-import br.com.editora.casaDoCodigo.request.NovaCategoria;
+import br.com.editora.casaDoCodigo.request.CategoriaRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -32,9 +32,9 @@ public class CategoriaController {
 
     @PostMapping(value = "/categoria")
     @Transactional
-    public String criar(@RequestBody @Valid NovaCategoria novaCategoria) {
+    public String criar(@RequestBody @Valid CategoriaRequest categoriaRequest) {
 
-        Categoria novacategoria = novaCategoria.converteToEntidade();
+        Categoria novacategoria = categoriaRequest.converteToEntidade();
         categoriaRepository.save(novacategoria);
         return novacategoria.toString();
     }

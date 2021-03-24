@@ -2,7 +2,7 @@ package br.com.editora.casaDoCodigo.validacoes;
 
 
 import br.com.editora.casaDoCodigo.entidades.Autor;
-import br.com.editora.casaDoCodigo.request.NovoAutor;
+import br.com.editora.casaDoCodigo.request.AutorRequest;
 import br.com.editora.casaDoCodigo.repository.AutorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -20,7 +20,7 @@ public class NovoAutorValidator implements Validator {
     @Override
     public boolean supports(Class<?> aClass) {
 
-        return NovoAutor.class.isAssignableFrom(aClass);
+        return AutorRequest.class.isAssignableFrom(aClass);
     }
 
     @Override
@@ -29,7 +29,7 @@ public class NovoAutorValidator implements Validator {
             return;
         }
 
-        NovoAutor requisicao = (NovoAutor) o;
+        AutorRequest requisicao = (AutorRequest) o;
 
         Optional<Autor> temEmail = autorRepository.findByEmail(requisicao.getEmail());
 

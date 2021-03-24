@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
 
-public class NovoLivro {
+public class LivroRequest {
     @NotBlank
     @UniqueValue(domainClass = Livro.class, fieldName = "titulo")
     private String titulo;
@@ -35,8 +35,9 @@ public class NovoLivro {
     @ExisteEntidade(domainClass = Autor.class, fieldName = "id")
     private Long idAutor;
 
-    public NovoLivro(@NotBlank String titulo, @NotBlank @Size(max = 500) String resumo, String sumario, @NotBlank @Size(min = 20) Double preco, @NotBlank Integer numeroPaginas, @NotBlank String isbn,
-                     @NotBlank Date dataPublicacao, @NotBlank Long  idCategoria, @NotBlank Long idAutor) {
+    public LivroRequest(@NotBlank String titulo, @NotBlank @Size(max = 500) String resumo, String sumario,
+                        @NotBlank @Size(min = 20) Double preco, @NotBlank Integer numeroPaginas, @NotBlank String isbn,
+                        @NotBlank Date dataPublicacao, @NotBlank Long  idCategoria, @NotBlank Long idAutor) {
         this.titulo = titulo;
         this.resumo = resumo;
         this.sumario = sumario;

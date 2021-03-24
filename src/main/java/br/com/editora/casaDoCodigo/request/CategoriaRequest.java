@@ -5,7 +5,7 @@ import br.com.editora.casaDoCodigo.entidades.Categoria;
 
 import javax.validation.constraints.NotBlank;
 
-public class NovaCategoria {
+public class CategoriaRequest {
 
     @NotBlank
     @UniqueValue(domainClass = Categoria.class, fieldName = "nome")

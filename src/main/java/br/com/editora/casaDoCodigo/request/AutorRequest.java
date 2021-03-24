@@ -7,7 +7,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-public class NovoAutor {
+public class AutorRequest {
 
     @NotNull @NotEmpty
     private String nome;
@@ -16,9 +16,9 @@ public class NovoAutor {
     @NotNull@NotEmpty@Size(max=400)
     private String descricao;
 
-    public NovoAutor(@NotNull @NotEmpty String nome,
-                     @NotNull @NotEmpty @Email String email,
-                     @NotNull @NotEmpty @Size(max = 400) String descricao) {
+    public AutorRequest(@NotNull @NotEmpty String nome,
+                        @NotNull @NotEmpty @Email String email,
+                        @NotNull @NotEmpty @Size(max = 400) String descricao) {
         this.nome = nome;
         this.email = email;
         this.descricao = descricao;

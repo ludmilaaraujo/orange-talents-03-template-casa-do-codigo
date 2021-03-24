@@ -4,10 +4,9 @@ import br.com.editora.casaDoCodigo.entidades.Livro;
 import br.com.editora.casaDoCodigo.repository.AutorRepository;
 import br.com.editora.casaDoCodigo.repository.CategoriaRepository;
 import br.com.editora.casaDoCodigo.repository.LivroRepository;
-import br.com.editora.casaDoCodigo.request.NovoLivro;
+import br.com.editora.casaDoCodigo.request.LivroRequest;
 import br.com.editora.casaDoCodigo.response.LivroResposta;
 import br.com.editora.casaDoCodigo.response.LivroRespostaDetalhe;
-import com.sun.istack.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -30,7 +29,7 @@ public class LivroController {
 
     @PostMapping(value = "/livro")
     @Transactional
-    public String novoLivro(@RequestBody @Valid NovoLivro novoLivro) {
+    public String novoLivro(@RequestBody @Valid LivroRequest novoLivro) {
         Livro livro = novoLivro.converteToEntidade(autorRepository, categoriaRepository);
         livroRepository.save(livro);
         return livro.toString();
