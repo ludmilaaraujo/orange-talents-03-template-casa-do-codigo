@@ -1,9 +1,9 @@
 package br.com.editora.casaDoCodigo.entidades;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import ch.qos.logback.core.joran.conditional.IfAction;
+
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class LocalidadePais {
@@ -12,6 +12,8 @@ public class LocalidadePais {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
+    @OneToMany(mappedBy="localidadePais")
+    private List<LocalidadeEstado> estados;
 
     public LocalidadePais(String nome) {
        this.nome = nome;
@@ -34,5 +36,13 @@ public class LocalidadePais {
 
     public String getNome() {
         return nome;
+    }
+
+    public List<LocalidadeEstado> estados() {
+        return this.estados;
+    }
+
+    public Boolean paisTemEstado() {
+        return !estados.isEmpty();
     }
 }

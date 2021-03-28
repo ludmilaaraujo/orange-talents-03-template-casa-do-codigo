@@ -7,15 +7,13 @@ import br.com.editora.casaDoCodigo.entidades.LocalidadeEstado;
 import br.com.editora.casaDoCodigo.entidades.LocalidadePais;
 import br.com.editora.casaDoCodigo.repository.LocalidadePaisRepository;
 
+import javax.persistence.EntityManager;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 public class LocalidadeEstadoRequest {
 
-    @NotNull @NotBlank
-    @UniqueValue(domainClass = LocalidadeEstado.class, fieldName = "nome")
     private String nome;
-    @NotNull
     @ExisteEntidade(domainClass = LocalidadePais.class, fieldName = "id")
     private Long idLocalidadePais;
 
@@ -37,4 +35,10 @@ public class LocalidadeEstadoRequest {
     public Long getIdLocalidadePais() {
         return idLocalidadePais;
     }
+
+//   public LocalidadeEstado toModel(EntityManager manager){
+//        return new LocalidadeEstado(nome, manager.find
+//                (LocalidadePais.class, idLocalidadePais));
+//   }
+
 }

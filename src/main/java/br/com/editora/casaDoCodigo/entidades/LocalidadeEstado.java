@@ -33,4 +33,9 @@ public class LocalidadeEstado {
         return localidadePais;
     }
 
+    @Deprecated
+    public LocalidadeEstado(){
+
+    }
+
 }
